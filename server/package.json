@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "an application to record the cattle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rifqi1986/Recording_ternak.git"
+  },
+  "author": "rifqi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rifqi1986/Recording_ternak/issues"
+  },
+  "homepage": "https://github.com/Rifqi1986/Recording_ternak#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.1"
+  }
+}
