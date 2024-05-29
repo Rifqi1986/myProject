@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
-const database = require("./auth.json")
+const database = require("./database/auth.json")
+const adminControllers = require("./controllers/adminControllers")
 
 
 
@@ -22,7 +23,7 @@ app.get('/register', (req, res) => {
     res.render('register');
   });
   
-  // // Callback untuk registrasi
+  // POST data ke database dengan id autoincrement
   app.post('/auth', (req, res) => {
     const{username, password} = req.body
     const lastItemPost = database[database.length -1].id
@@ -38,30 +39,67 @@ app.get('/register', (req, res) => {
 
 }); 
 
+// GET All data dari Database
+app.get("/auth", (req,res)=>{
+  res.status(200).json(database)
+})
+
+// GET data by id dari database
+app.get("/auth/:id", (req,res)=>{
+  const idParams = req.params.id // memanggil id harus gunakan req.params
+
+  let tampStrings =""
+    database.forEach (Element => {
+      if (idParams == Element.id) {
+        tampStrings = Element.username
+
+      
+    }
+  })
+  res.status(200).json(tampStrings)
+})
+
+
+// UPDATE data by id database
+
+// GET data by id dari database
+app.patch("/auth/:id", (req,res)=>{
+  const idParams = req.params.id
+  const {username, password} = req.body
+
+  for (let index = 0; index < database.length; index++) {
+       if (database[index].id == idParams) {
+        database[index].username = username
+       }
+  }
+  res.status(200).json(database)
+});
+
+// DELETE data by id database
+app.delete("/auth/:id", (req,res)=>{
+  const idParams = req.params.id
+const result =  database.filter(Element => Element.id != idParams)
+res.status(202).json(result)
+})
+
+
+
 // Route untuk halaman Login
 app.get('/login',(req,res) =>{
 res.render('home')
 });
 
+app.get("/hello", (req, res) => {
+  res.status(200).json('hello world')
+})
+
+
+
+
 
 
 // Callback untuk login
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  // Validasi data (misalnya: pastikan tidak ada field yang kosong)
-  if (!username || !password) {
-    res.status(400).send('Semua field harus diisi.');
-    return;
-  }
-  // Lakukan proses autentikasi (misalnya: cek username dan password)
-  // Jika berhasil, redirect ke halaman home
-  // Jika gagal, tampilkan pesan error
-  // Contoh sederhana:
-  if (username === 'username' && password === 'password') {
-    res.render('home');
-  } else {
-    res.status(401).render('register');
-  }
+app.post('/login', (adminControllers) => {
 });
 
 
