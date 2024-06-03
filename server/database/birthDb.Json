@@ -1,0 +1,27 @@
+[
+    {
+        "id" : 1,
+        "eartagInduk"   : "1756",
+        "tglPartus"     : "01/06/2024",
+        "jkAnak"        : "Jantan",
+        "kondisiAnak"   : "Sehat",
+        "kondisiInduk"  : "Sehat"
+    },
+    {
+        "id" : 2,
+        "eartagInduk"   : "1642",
+        "tglPartus"     : "02/06/2024",
+        "jkAnak"        : "Betina",
+        "kondisiAnak"   : "Sehat",
+        "kondisiInduk"  : "Sehat"
+    },
+    {
+        "id" : 3,
+        "eartagInduk"   : "1632",
+        "tglPartus"     : "03/06/2024",
+        "jkAnak"        : "Betina",
+        "kondisiAnak"   : "Sehat",
+        "kondisiInduk"  : "Sehat"
+    }
+
+]
