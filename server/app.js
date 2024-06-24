@@ -104,13 +104,15 @@ app.get("/hello", (req, res) => {
 })
 
 
-
-
-
-
 // Callback untuk login
 app.post('/login', (adminControllers) => {
 });
+
+
+
+//.............................................DATA TERNAK.............
+
+
 
 
 
@@ -156,7 +158,6 @@ app.get("/get-birth/:id", (req,res)=>{
   res.status(200).json(tampStrings)
 })
 
-
 // UPDATE data Birth by id database
 
 app.patch("/patch-birth/:id", (req,res)=>{
@@ -173,7 +174,7 @@ app.patch("/patch-birth/:id", (req,res)=>{
   res.status(200).json(birthDb)
 });
 
-// DELETE data USER by id database
+// DELETE data Birth by id database
 app.delete("/delete-birth/:id", (req,res)=>{
   const idParams = req.params.id
   console.log(birthDb, "==> sebelum dihapus");
@@ -182,4 +183,268 @@ console.log(result, "==> sesudah dihapus");
 //res.status(202).json(result, "==> sesudah dihapus")
 })
 
+
+// .................................................................................UNTUK DISUSUN
+// METHOD POST
+
+// entri Data Ternak
+app.post("/alldata", (reg,res)=>{
+  res.status(200).json.send('Data berhasil disimpan ke Database');
+})
+
+  
+// entri Data Kelahiran
+app.post("/birth", (reg,res)=>{
+      res.status(200).json.send('Data Kelahiran berhasil disimpan')
+  })
+
+  
+// entri Data Kematian
+app.post("/death", (reg,res)=>{
+      res.status(200).send('Data kematian berhasil disimpan')
+  })
+
+// entri Data Penjualan
+app.post("/sell", (reg,res)=>{
+      res.status(200).send('Data penjualan berhasil disimpan')
+  })
+
+// entri Data Hibah
+app.post("/hibah", (reg,res)=>{
+  res.status(200).send('Data hibah berhasil disimpan')
+})
+
+
+// entri Data Pengukuran
+app.post("/measure", (reg,res)=>{
+  res.status(200).send('Data pengukuran berhasil disimpan')
+})
+
+// entri Data Pejantan
+app.post("/bull", (reg,res)=>{
+  res.status(200).send('Data berhasil disimpan')
+})
+
+// entri Data Pengobatan
+app.post("/treat", (reg,res)=>{
+  res.status(200).send('Data pengobatan berhasil disimpan')
+})
+
+// entri Data Obat
+app.post("/drug", (reg,res)=>{
+  res.status(200).send('Data berhasil disimpan')
+})
+
+// entri Data Perkawinan
+app.post("/mating", (reg,res)=>{
+  res.status(200).send('Data berhasil disimpan')
+})
+
+// entri Data Kebuntingan
+app.post("/pragnant", (reg,res)=>{
+  res.status(200).send('Data berhasil disimpan')
+})
+
+
+// entri Data Penanggulangan Reproduksi
+app.post("/reprotreat", (reg,res)=>{
+  res.status(200).send('Data berhasil disimpan')
+})
+
+
+//METHOD GET
+
+// Show Data Ternak
+app.get("/alldata", (reg,res)=>{
+  res.status(200).json.send('ini adalah Database ternak');
+})
+
+  
+// Show Data Kelahiran
+app.get("/birth", (reg,res)=>{
+      res.status(200).json.send('ini adalah Data kelahiran')
+  })
+
+  
+// Show Data Kematian
+app.get("/death", (reg,res)=>{
+      res.status(200).send('ini adalah Data kematian')
+  })
+
+// Show Data Penjualan
+app.get("/sell", (reg,res)=>{
+      res.status(200).send('ini adalah Data penjualan')
+  })
+
+// Show Data Hibah
+app.get("/hibah", (reg,res)=>{
+  res.status(200).send('ini adalah Data hibah')
+  })
+
+// Show Data Pengukuran
+app.get("/measure", (reg,res)=>{
+  res.status(200).send('ini adalah Data pengukuran')
+  })
+
+// Show Data Pejantan
+app.get("/bull", (reg,res)=>{
+  res.status(200).send('ini adalah Data pejantan')
+  })
+
+// Show Data Pengobatan
+app.get("/treat", (reg,res)=>{
+  res.status(200).send('ini adalah Data pengobatan')
+  })
+
+// Show Data Obat
+app.get("/drug", (reg,res)=>{
+  res.status(200).send('ini adalah Data obat')
+  })
+
+// Show Data Perkawinan
+app.get("/mating", (reg,res)=>{
+  res.status(200).send('ini adalah Data perkawinan')
+  })
+
+// Show Data Kebuntingan
+app.get("/pragnant", (reg,res)=>{
+  res.status(200).send('ini adalah Data kebuntingan')
+  })
+
+
+// Show Data Penanggulangan Reproduksi
+app.get("/reprotreat", (reg,res)=>{
+  res.status(200).send('ini adalah Data penanggulangan Reproduksi')
+  })
+
+// METHOD PATCH
+
+// Update Data Ternak
+app.patch("/alldata", (reg,res)=>{
+  res.status(200).json.send('ini adalah Database ternak');
+  })
+
+  
+// Update Data Kelahiran
+app.patch("/birth", (reg,res)=>{
+      res.status(200).json.send('ini adalah Data kelahiran')
+  })
+
+  
+// Update Data Kematian
+app.patch("/death", (reg,res)=>{
+      res.status(200).send('ini adalah Data kematian')
+  })
+
+// Update Data Penjualan
+app.patch("/sell", (reg,res)=>{
+      res.status(200).send('ini adalah Data penjualan')
+  })
+
+// Update Data Hibah
+app.patch("/hibah", (reg,res)=>{
+  res.status(200).send('ini adalah Data hibah')
+  })
+
+// Update Data Pengukuran
+app.patch("/measure", (reg,res)=>{
+  res.status(200).send('ini adalah Data pengukuran')
+  })
+
+// Update Data Pejantan
+app.patch("/bull", (reg,res)=>{
+  res.status(200).send('ini adalah Data pejantan')
+  })
+
+// Update Data Pengobatan
+app.patch("/treat", (reg,res)=>{
+  res.status(200).send('ini adalah Data pengobatan')
+  })
+
+// Update Data Obat
+app.patch("/drug", (reg,res)=>{
+  res.status(200).send('ini adalah Data obat')
+  })
+
+// Update Data Perkawinan
+app.patch("/mating", (reg,res)=>{
+  res.status(200).send('ini adalah Data perkawinan')
+  })
+
+// Update Data Kebuntingan
+app.patch("/pragnant", (reg,res)=>{
+  res.status(200).send('ini adalah Data kebuntingan')
+  })
+
+
+// Update Data Penanggulangan Reproduksi
+app.patch("/reprotreat", (reg,res)=>{
+  res.status(200).send('ini adalah Data penanggulangan Reproduksi')
+  })
+
+
+  //METHOD DELETE
+
+// DELETE Data Ternak
+app.delete("/alldata", (reg,res)=>{
+  res.status(200).json.send('ini adalah Database ternak');
+})
+
+  
+// DELETE Data Kelahiran
+app.delete("/birth", (reg,res)=>{
+      res.status(200).json.send('ini adalah Data kelahiran')
+  })
+
+  
+// DELETE Data Kematian
+app.delete("/death", (reg,res)=>{
+      res.status(200).send('ini adalah Data kematian')
+  })
+
+// DELETE Data Penjualan
+app.delete("/sell", (reg,res)=>{
+      res.status(200).send('ini adalah Data penjualan')
+  })
+
+// DELETE Data Hibah
+app.delete("/hibah", (reg,res)=>{
+  res.status(200).send('ini adalah Data hibah')
+  })
+
+// DELETE Data Pengukuran
+app.delete("/measure", (reg,res)=>{
+  res.status(200).send('ini adalah Data pengukuran')
+  })
+
+// DELETE Data Pejantan
+app.delete("/bull", (reg,res)=>{
+  res.status(200).send('ini adalah Data pejantan')
+  })
+
+// DELETE Data Pengobatan
+app.delete("/treat", (reg,res)=>{
+  res.status(200).send('ini adalah Data pengobatan')
+  })
+
+// DELETE Data Obat
+app.delete("/drug", (reg,res)=>{
+  res.status(200).send('ini adalah Data obat')
+  })
+
+// DELETE Data Perkawinan
+app.delete("/mating", (reg,res)=>{
+  res.status(200).send('ini adalah Data perkawinan')
+  })
+
+// DELETE Data Kebuntingan
+app.delete("/pragnant", (reg,res)=>{
+  res.status(200).send('ini adalah Data kebuntingan')
+  })
+
+
+// DELETE Data Penanggulangan Reproduksi
+app.delete("/reprotreat", (reg,res)=>{
+  res.status(200).send('ini adalah Data penanggulangan Reproduksi')
+  })
 
