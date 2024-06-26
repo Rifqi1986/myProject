@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 // menjalankan ejs
-app.set('view engine','ejs')
+// app.set('view engine','ejs')
 
 // Jalankan server
 const PORT = 3005;

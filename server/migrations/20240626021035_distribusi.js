@@ -5,13 +5,16 @@
 exports.up = function(knex) {
     return knex.schema.createTable('distribusi', function (table) {
         table.increments('id').primary();
-        table.integer('id_datasapi').unsigned().notNullable().references('id').inTable('datasapi').onDelete('CASCADE').onUpdate('CASCADE');
+        table.string('eartag').notNullable();
+        // table.integer('id_dataSapi').unsigned().notNullable().references('id').inTable('dataSapi').onDelete('CASCADE').onUpdate('CASCADE');
         table.string('rumpun').notNullable();
         table.string('sex').notNullable();
         table.date('tgl_jual').notNullable();
         table.string('status').notNullable();
+        table.string('billing').notNullable();
         table.string('foto').notNullable();
         table.string('pelapor').notNullable();
+        // table.integer('id_dataUsers').unsigned().notNullable().references('id').inTable('dataUsers').onDelete('CASCADE').onUpdate('CASCADE');
         table.timestamps(true, true);
       });
   
@@ -25,3 +28,4 @@ exports.up = function(knex) {
 exports.down = function(knex) {
     return knex.schema.dropTable('distribusi');
 };
+

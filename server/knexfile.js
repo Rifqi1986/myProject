@@ -12,8 +12,8 @@ module.exports = {
       host: "localhost",
       port: 5432,
       user: "postgres",
-      database: "DatabaseSapi",
-      password: "localhost",
+      database: "databaseSapi",
+      password: "123456",
       
     }
   },

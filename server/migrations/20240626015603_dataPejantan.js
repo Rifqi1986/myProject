@@ -3,14 +3,15 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-    return knex.schema.createTable('datapejantan', function (table) {
+    return knex.schema.createTable('dataPejantan', function (table) {
         table.increments('id').primary();
         table.string('nama').notNullable;
         table.string('rumpun').notNullable;
         table.string('asal').notNullable;
         table.string('kode').notNullable;
         table.integer('stok').notNullable;
-        table.string('pelapor').notNullable();
+        table.string('pelapor').notNullable;
+        // table.integer('id_dataUsers').unsigned().notNullable().references('id').inTable('dataUsers').onDelete('CASCADE').onUpdate('CASCADE');
         table.timestamps(true, true);
       });
   
@@ -21,6 +22,7 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-   return knex.schema.dropTable('datapejantan');
+   return knex.schema.dropTable('dataPejantan');
   
 };
+

@@ -1,4 +1,13 @@
-get http://localhost:3000/data-sapi
+get http://localhost:3000/getAllDataSapi
 
 ###
+get http://localhost:3000/getAllUserData
 
+###
+get http://localhost:3000/getAllPejantan
+
+###
+get http://localhost:3000/getAllObat
+
+###
+get http://localhost:3000/getAllPetugas
