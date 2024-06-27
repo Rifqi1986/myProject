@@ -4,27 +4,27 @@ const knex = require('../config/database');
 
 class PejantanModel {
   constructor() {
-    this.table = 'dataPejantan';
+    this.mytable = 'dataPejantan';
   }
 
   async getAllData() {
-    return knex(this.table).select('*');
+    return knex(this.mytable).select('*');
   }
 
   async getDataById(id) {
-    return knex(this.table).where({ id }).first();
+    return knex(this.mytable).where({ id }).first();
   }
 
   async addData(data) {
-    return knex(this.table).insert(data).returning('*');
+    return knex(this.mytable).insert(data).returning('*');
   }
 
   async updateData(id, Data) {
-    return knex(this.table).where({ id }).update(Data).returning('*');
+    return knex(this.mytable).where({ id }).update(Data).returning('*');
   }
 
   async deleteData(id) {
-    return knex(this.table).where({ id }).del();
+    return knex(this.mytable).where({ id }).del();
   }
 }
 

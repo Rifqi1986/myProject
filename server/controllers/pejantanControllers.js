@@ -39,7 +39,7 @@ class PejantanController {
     try {
       const { id } = req.params;
       const Data = req.body;
-      const dataUpdated = await User.updateData(id, Data);
+      const dataUpdated = await Pejantan.updateData(id, Data);
       res.status(200).json(dataUpdated);
     } catch (error) {
       res.status(500).json({ error: error.message });

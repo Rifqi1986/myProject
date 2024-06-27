@@ -8,7 +8,7 @@ exports.seed = async function(knex) {
   await knex('kelahiran').insert([
     {
       id: 1,
-      eartag: '006',
+      dataSapi_id: 1,
       rumpun: 'Simmental',
       eartag_anak: 'a123',
       sex: 'Jantan',
@@ -16,11 +16,11 @@ exports.seed = async function(knex) {
       kondisi_anak: 'sehat',
       kondisi_induk: 'sehat',
       foto: 'pic',
-      pelapor: 'ari'
+      dataUsers_id: 1
     },
     {
     id: 2,
-    eartag: '009',
+    dataSapi_id: 1,
     rumpun: 'Simmental',
     eartag_anak: 'a124',
     sex: 'Jantan',
@@ -28,11 +28,11 @@ exports.seed = async function(knex) {
     kondisi_anak: 'sehat',
     kondisi_induk: 'sehat',
     foto: 'pic',
-    pelapor: 'ari'
+    dataUsers_id: 1
     },
     {
       id: 3,
-      eartag: '004',
+      dataSapi_id: 1,
       rumpun: 'Simmental',
       eartag_anak: 'a125',
       sex: 'Jantan',
@@ -40,7 +40,7 @@ exports.seed = async function(knex) {
       kondisi_anak: 'sehat',
       kondisi_induk: 'sehat',
       foto: 'pic',
-      pelapor: 'ari'
+      dataUsers_id: 1
       }
   ]);
 };

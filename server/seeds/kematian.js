@@ -8,36 +8,36 @@ exports.seed = async function(knex) {
   await knex('kematian').insert([
     {
       id: 1,
-      eartag: '0034',
+      dataSapi_id: 1,
       rumpun: 'Simmental',
       sex: 'Betina',
       tgl_mati: '10/04/2024',
       diagnosa: 'tympani',
       note: 'lalukan nekropsi',
       foto: 'pic',
-      pelapor: 'ari'
+      dataUsers_id: 1
     },
     {
       id: 2,
-      eartag: '0042',
+      dataSapi_id: 1,
       rumpun: 'Simmental',
       sex: 'Betina',
       tgl_mati: '10/04/2024',
       diagnosa: 'bloat',
       note: 'lalukan nekropsi',
       foto: 'pic',
-      pelapor: 'ari'
+      dataUsers_id: 1
     },
     {
       id: 3,
-      eartag: '0044',
+      dataSapi_id: 1,
       rumpun: 'Simmental',
       sex: 'Jantan',
       tgl_mati: '10/04/2024',
       diagnosa: 'Babesiosis',
       note: 'lalukan nekropsi',
       foto: 'pic',
-      pelapor: 'edi'
+      dataUsers_id: 1
     },
   ]);
 };

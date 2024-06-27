@@ -1,10 +1,10 @@
-// models/obatModel.js
+// models/perkawinanModel.js
 
 const knex = require('../config/database');
 
-class ObatModel {
+class PerkawinanModel {
   constructor() {
-    this.mytable = 'dataObat';
+    this.mytable = 'perkawinan';
   }
 
   async getAllData() {
@@ -28,4 +28,4 @@ class ObatModel {
   }
 }
 
-module.exports = new ObatModel();
+module.exports = new PerkawinanModel();

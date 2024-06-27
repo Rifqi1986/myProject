@@ -10,10 +10,11 @@ exports.up = function(knex) {
         table.string('kode').notNullable;
         table.date('expired').notNullable;
         table.integer('stok').notNullable;
-        table.string('pelapor').notNullable;
-        // table.integer('id_dataUsers').unsigned().notNullable().references('id').inTable('dataUsers').onDelete('CASCADE').onUpdate('CASCADE');
+        table.integer('dataUsers_id').unsigned().notNullable();
         table.timestamps(true, true);
       });
+
+      table.foreign('dataUsers_id').references('id').inTable('dataUsers').onDelete('CASCADE').onUpdate('CASCADE');
   
 };
 

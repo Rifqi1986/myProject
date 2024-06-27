@@ -8,45 +8,45 @@ exports.seed = async function(knex) {
   await knex('treatment').insert([
     {
       id: 1,
-      eartag: '0025',
+      dataSapi_id: 1,
       rumpun: 'Simmental',
       sex: 'Jantan',
       tgl_treat: '12/04/2024',
       status: 'reguler',
       diagnosa: 'demam',
-      petugas: 'ari',
-      obat: 'antibiotik',
+      dataPetugas_id: 1,
+      dataObat_id: 1,
       note: 'dirawat dulu',
       foto: 'pic',
-      pelapor: 'edi'
+      dataUsers_id: 1
     },
     {
       id: 2,
-      eartag: '0028',
+      dataSapi_id: 1,
       rumpun: 'Simmental',
       sex: 'Jantan',
       tgl_treat: '13/04/2024',
       status: 'reguler',
       diagnosa: 'demam',
-      petugas: 'ari',
-      obat: 'antibiotik',
+      dataPetugas_id: 1,
+      dataObat_id: 1,
       note: 'dirawat dulu',
       foto: 'pic',
-      pelapor: 'edi'
+      dataUsers_id: 1
     },
     {
       id: 3,
-      eartag: '0030',
+      dataSapi_id: 1,
       rumpun: 'Simmental',
       sex: 'Jantan',
       tgl_treat: '12/04/2024',
       status: 'reguler',
       diagnosa: 'demam',
-      petugas: 'edi',
-      obat: 'antibiotik',
+      dataPetugas_id: 1,
+      dataObat_id: 1,
       note: 'dirawat dulu',
       foto: 'pic',
-      pelapor: 'edi'
+      dataUsers_id: 1
     },
   ]);
 };
