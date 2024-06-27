@@ -9,13 +9,17 @@ exports.up = function(knex) {
         table.string('rumpun').notNullable();
         table.string('sex').notNullable();
         table.date('tgl_lhr').notNullable();
-        table.string('pejantan').notNullable();
+        table.integer('dataPejantan_id').unsigned().notNullable();
         // table.integer('id_dataPejantan').unsigned().notNullable().references('id').inTable('dataPejantan').onDelete('CASCADE').onUpdate('CASCADE');
         table.string('induk').notNullable();
-        table.string('pelapor').notNullable();
+        table.integer('dataUsers_id').unsigned().notNullable();
+        // table.string('pelapor').notNullable();
         // table.integer('id_dataUsers').unsigned().notNullable().references('id').inTable('dataUsers').onDelete('CASCADE').onUpdate('CASCADE');
         table.timestamps(true, true);
       });
+      table.foreign('dataUsers_id').references('id').inTable('dataUsers').onDelete('CASCADE').onUpdate('CASCADE');
+      table.foreign('dataPejantan_id').references('id').inTable('dataPejantan').onDelete('CASCADE').onUpdate('CASCADE');
+      
   
 };
 

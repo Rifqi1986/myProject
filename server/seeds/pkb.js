@@ -8,36 +8,36 @@ exports.seed = async function(knex) {
   await knex('pkb').insert([
     {
         id: 1,
-        eartag: '003',
+        dataSapi_id: 1,
         rumpun: 'Simmental',
         tgl_pkb: '06/03/2024',
         metode: 'palpasi',
-        petugas: 'ari',
+        dataPetugas_id: 1,
         hasil: 'positif',
         foto: 'pic',
-        pelapor: 'ari'
+        dataUsers_id: 1
     },
     {
       id: 2,
-      eartag: '005',
+      dataSapi_id: 1,
       rumpun: 'Simmental',
       tgl_pkb: '08/03/2024',
       metode: 'usg',
-      petugas: 'andi',
+      dataPetugas_id: 1,
       hasil: 'negatif',
       foto: 'pic',
-      pelapor: 'andi',
+      dataUsers_id: 1,
   },
   {
     id: 3,
-    eartag: '005',
+    dataSapi_id: 1,
     rumpun: 'Limousin',
     tgl_pkb: '08/03/2024',
     metode: 'palpasi rectal',
-    petugas: 'edi',
+    dataPetugas_id: 1,
     hasil: 'positif',
     foto: 'pic',
-    pelapor: 'edi'
+    dataUsers_id: 1
 },
     
   ]);

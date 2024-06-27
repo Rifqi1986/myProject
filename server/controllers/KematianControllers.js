@@ -1,11 +1,11 @@
-// controllers/ObatController.js
+// controllers/kematianController.js
 
-const Obat = require('../models/obatModel');
+const mati = require('../models/kematianModel');
 
-class ObatController {
+class KematianController {
   async getAllData(req, res) {
     try {
-      const data = await Obat.getAllData();
+      const data = await mati.getAllData();
       res.status(200).json(data);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -15,7 +15,7 @@ class ObatController {
   async getDataById(req, res) {
     try {
       const { id } = req.params;
-      const data = await Obat.getDataById(id);
+      const data = await mati.getDataById(id);
       if (!data) {
         return res.status(404).json({ error: 'Data tidak ditemukan..!!' });
       }
@@ -28,7 +28,7 @@ class ObatController {
   async addData(req, res) {
     try {
       const newData = req.body;
-      const createdData = await Obat.addData(newData);
+      const createdData = await mati.addData(newData);
       res.status(201).json(createdData);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -39,7 +39,7 @@ class ObatController {
     try {
       const { id } = req.params;
       const Data = req.body;
-      const dataUpdated = await Obat.updateData(id, Data);
+      const dataUpdated = await mati.updateData(id, Data);
       res.status(200).json(dataUpdated);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -49,7 +49,7 @@ class ObatController {
   async deleteData(req, res) {
     try {
       const { id } = req.params;
-      await Obat.deleteData(id);
+      await mati.deleteData(id);
       res.status(204).end();
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -57,4 +57,4 @@ class ObatController {
   }
 }
 
-module.exports = new ObatController();
+module.exports = new KematianController();

@@ -1,3 +1,5 @@
+
+
 class authControler {
     static login (req,res){
         const { username, password } = req.body;
