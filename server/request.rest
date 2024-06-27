@@ -1,7 +1,7 @@
-get http://localhost:3000/getAllDataSapi
+get http://localhost:3000/users
 
 ###
-get http://localhost:3000/getAllUserData
+get http://localhost:3000/users/1
 
 ###
 get http://localhost:3000/getAllPejantan
