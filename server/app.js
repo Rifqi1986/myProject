@@ -2,6 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const db = require('./config/database.js')
 const usersRouter = require('./routes/usersRoute.js');
 const pejantanRouter = require('./routes/pejantanRoute.js');
 const petugasRouter = require('./routes/petugasRoute.js');
@@ -13,6 +14,7 @@ const kelahiranRouter = require('./routes/kelahiranRoute.js');
 const treatmentRouter = require('./routes/treatmentRoute.js');
 const kematianRouter = require('./routes/kematianRoute.js');
 const distribusiRouter = require('./routes/distribusiRoute.js');
+const authRouter = require('./controllers/authController.js')
 
 
 // const client = require("./config/database.js")
@@ -21,12 +23,18 @@ const distribusiRouter = require('./routes/distribusiRoute.js');
 const app = express();
 const port = 3000;
 
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
 app.use(bodyParser.json());
 
 // Konfigurasi middleware
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+app.get('/', (req,res)=>{
+  res.render('auth/login')
+})
 app.use('/users', usersRouter);
 app.use('/pejantan', pejantanRouter);
 app.use('/petugas', petugasRouter);
@@ -38,6 +46,7 @@ app.use('/kelahiran', kelahiranRouter);
 app.use('/treatment', treatmentRouter);
 app.use('/kematian', kematianRouter);
 app.use('/distribusi', distribusiRouter);
+app.use('/sirepatas', authRouter);
 
 
 
