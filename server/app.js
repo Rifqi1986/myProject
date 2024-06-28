@@ -36,7 +36,7 @@ app.use(express.urlencoded({extended: true}))
 app.get('/', (req,res)=>{
   res.render('auth/login')
 })
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
 app.use('/pejantan', pejantanRouter);
 app.use('/petugas', petugasRouter);
 app.use('/obat', obatRouter);

@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rifqi1986/Recording_ternak.git"
+    "url": "git+https://github.com/Rifqi1986/myProject.git"
   },
-  "author": "rifqi",
+  "author": "rifqi elfajri",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Rifqi1986/Recording_ternak/issues"
   },
-  "homepage": "https://github.com/Rifqi1986/Recording_ternak#readme",
+  "homepage": "https://github.com/Rifqi1986/myProject#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "ejs": "^3.1.10",
