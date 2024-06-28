@@ -12,7 +12,7 @@ router.get('/admin', (req, res) => {
   if (!req.session.user || req.session.user.role !== 'admin') {
     res.status(403).send({ error: 'Access denied' });
   } else {
-    res.render('auth/admin');
+    res.render('pages/admin');
   }
 });
 
@@ -20,7 +20,7 @@ router.get('/user', (req, res) => {
   if (!req.session.user || req.session.user.role !== 'user') {
     res.status(403).send({ error: 'Access denied' });
   } else {
-    res.render('auth/user');
+    res.render('pages/user');
   }
 });
 

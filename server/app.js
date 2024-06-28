@@ -32,6 +32,8 @@ app.use(bodyParser.json());
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+app.use(authRouter);
+
 
 app.get('/', (req,res)=>{
   res.render('auth/login')

@@ -7,7 +7,7 @@ const login = async (req, res) => {
   if (user && user.password === password) {
     // Role based redirection
     if (user.role === 'admin') {
-      return res.render('pages/user');
+      return res.render('pages/admin');
     } else if (user.role === 'user') {
       return res.render('pages/user');
     } else {
