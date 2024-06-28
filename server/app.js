@@ -14,7 +14,7 @@ const kelahiranRouter = require('./routes/kelahiranRoute.js');
 const treatmentRouter = require('./routes/treatmentRoute.js');
 const kematianRouter = require('./routes/kematianRoute.js');
 const distribusiRouter = require('./routes/distribusiRoute.js');
-const authRouter = require('./controllers/authController.js')
+const authRouter = require('./routes/authRoute.js')
 
 
 // const client = require("./config/database.js")
@@ -32,6 +32,7 @@ app.use(bodyParser.json());
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+
 app.get('/', (req,res)=>{
   res.render('auth/login')
 })
@@ -46,7 +47,6 @@ app.use('/kelahiran', kelahiranRouter);
 app.use('/treatment', treatmentRouter);
 app.use('/kematian', kematianRouter);
 app.use('/distribusi', distribusiRouter);
-app.use('/sirepatas', authRouter);
 
 
 

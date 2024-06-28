@@ -1,23 +1,23 @@
-const User = require('../models/authModel');
+const userModel = require('../models/authModel');
 
-class AuthController {
-  async login(req, res, next) {
-    const { username, password } = req.body;
-    try {
-      const user = await User.findByUsername(username);
-      if (!user) {
-        throw new Error('Invalid username or password');
-      }
-      const isValidPassword = await User.validatePassword(password, user.password);
-      if (!isValidPassword) {
-        throw new Error('Invalid username or password');
-      }
-      req.session.user = user;
-      res.redirect(`/${user.role}`);
-    } catch (err) {
-      res.status(401).send({ error: 'Invalid username or password' });
+const login = async (req, res) => {
+  const { username, password } = req.body;
+  const user = await userModel.getUserByUsername(username);
+
+  if (user && user.password === password) {
+    // Role based redirection
+    if (user.role === 'admin') {
+      return res.render('pages/user');
+    } else if (user.role === 'user') {
+      return res.render('pages/user');
+    } else {
+      return res.status(403).send('Access Denied');
     }
+  } else {
+    res.status(401).send('Invalid Credentials');
   }
-}
+};
 
-module.exports = AuthController;
+module.exports = {
+  login
+};

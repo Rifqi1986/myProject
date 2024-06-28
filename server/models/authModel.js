@@ -1,13 +1,9 @@
-const knex = require('../knexfile');
+const db = require('../config/database');
 
-class AuthModel {
-  static async findByUsername(username) {
-    return knex('dataUsers').where({ username }).first();
-  }
+const getUserByUsername = async (username) => {
+  return await db('dataUsers').where({ username }).first();
+};
 
-  static async validatePassword(password, hashedPassword) {
-    return bcrypt.compare(password, hashedPassword);
-  }
-}
-
-module.exports = AuthModel;
+module.exports = {
+  getUserByUsername
+};
