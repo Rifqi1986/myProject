@@ -2,7 +2,6 @@
 
 const express = require('express');
 const router = express.Router();
-const PejantanController = require('../controllers/petugasController');
 const db = require("../config/database");
 const petugasController = require('../controllers/petugasController');
 

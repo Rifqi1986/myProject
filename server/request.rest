@@ -11,3 +11,6 @@ get http://localhost:3000/getAllObat
 
 ###
 get http://localhost:3000/getAllPetugas
+
+###
+POST  http://localhost:3000
