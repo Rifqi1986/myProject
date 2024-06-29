@@ -1,31 +1,52 @@
 // models/User.js
 
-const knex = require('../config/database');
+const db = require('../config/database');
 
-class User {
-  constructor() {
-    this.myTable = 'dataUsers';
-  }
-
+class UserModel {
   async getAllUsers() {
-    return knex(this.myTable).select('*');
+    try {
+      const users = await db('dataUsers').select('*');
+      return users;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async getUserById(id) {
-    return knex(this.myTable).where({ id }).first();
+    try {
+      const user = await db('dataUsers').where({ id }).first();
+      return user;
+    } catch (error) {
+      throw error;
+    }
   }
 
-  async createUser(user) {
-    return knex(this.myTable).insert(user).returning('*');
+  async createUser(newUser) {
+    try {
+      const [userId] = await db('dataUsers').insert(newUser).returning('id');
+      return userId;
+    } catch (error) {
+      throw error;
+    }
   }
 
-  async updateUser(id, Data) {
-    return knex(this.myTable).where({ id }).update(Data).returning('*');
+  async updateUser(id, userData) {
+    try {
+      await db('dataUsers').where({ id }).update(userData);
+      return true;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async deleteUser(id) {
-    return knex(this.myTable).where({ id }).del();
+    try {
+      await db('dataUsers').where({ id }).del();
+      return true;
+    } catch (error) {
+      throw error;
+    }
   }
 }
 
-module.exports = new User();
+module.exports = new UserModel();

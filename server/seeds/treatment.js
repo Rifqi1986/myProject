@@ -18,7 +18,7 @@ exports.seed = async function(knex) {
       dataObat_id: 1,
       note: 'dirawat dulu',
       foto: 'pic',
-      dataUsers_id: 1
+      dataUsers_id: 3
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ exports.seed = async function(knex) {
       dataObat_id: 1,
       note: 'dirawat dulu',
       foto: 'pic',
-      dataUsers_id: 1
+      dataUsers_id: 4
     },
     {
       id: 3,
@@ -46,7 +46,7 @@ exports.seed = async function(knex) {
       dataObat_id: 1,
       note: 'dirawat dulu',
       foto: 'pic',
-      dataUsers_id: 1
+      dataUsers_id: 3
     },
   ]);
 };

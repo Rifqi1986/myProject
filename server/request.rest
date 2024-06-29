@@ -1,10 +1,10 @@
-get http://localhost:3000/users
+get http://localhost:3000/api/user
 
 ###
 get http://localhost:3000/users/1
 
 ###
-get http://localhost:3000/getAllPejantan
+get http://localhost:3000/api/pejantan
 
 ###
 get http://localhost:3000/getAllObat

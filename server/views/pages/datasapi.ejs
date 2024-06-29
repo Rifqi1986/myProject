@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of Users</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>List of data Sapi</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Eartag</th>
+          <th>Rumpun</th>
+          <th>Sex</th>
+          <th>Tanggal Lahir</th>
+          <th>Bapak</th>
+          <th>Induk</th>
+          <th>Pelapor</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(data => { %>
+          <tr>
+            <td><%= data.id %></td>
+            <td><%= data.eartag %></td>
+            <td><%= data.rumpun %></td>
+            <td><%= data.sex %></td>
+            <td><%= data.tgl_lhr %></td>
+            <!-- <td><%= data.nama %></td> -->
+            <td><%= data.induk %></td>
+            <!-- <td><%= data.dataUsers_id %></td> -->
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Bootstrap JS (diperlukan untuk beberapa komponen Bootstrap) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

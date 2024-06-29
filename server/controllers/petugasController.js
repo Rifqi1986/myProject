@@ -1,10 +1,11 @@
 // controllers/petugasController.js
 
-const Petugas = require('../models/petugasModel');
+const Petugas = require("../models/petugasModel");
 
 class PetugasController {
-  async getAllData(req, res) {
+  static async getAllData(req, res) {
     try {
+      console.log("masuk");
       const data = await Petugas.getAllData();
       res.status(200).json(data);
     } catch (error) {
@@ -12,12 +13,12 @@ class PetugasController {
     }
   }
 
-  async getDataById(req, res) {
+  static async getDataById(req, res) {
     try {
       const { id } = req.params;
       const data = await Petugas.getDataById(id);
       if (!data) {
-        return res.status(404).json({ error: 'Data tidak ditemukan..!!' });
+        return res.status(404).json({ error: "Data tidak ditemukan..!!" });
       }
       res.status(200).json(data);
     } catch (error) {
@@ -25,7 +26,7 @@ class PetugasController {
     }
   }
 
-  async addData(req, res) {
+  static async addData(req, res) {
     try {
       const newData = req.body;
       const createdData = await Petugas.addData(newData);
@@ -35,7 +36,7 @@ class PetugasController {
     }
   }
 
-  async updateData(req, res) {
+  static async updateData(req, res) {
     try {
       const { id } = req.params;
       const Data = req.body;
@@ -46,7 +47,7 @@ class PetugasController {
     }
   }
 
-  async deleteData(req, res) {
+  static async deleteData(req, res) {
     try {
       const { id } = req.params;
       await Petugas.deleteData(id);
@@ -57,4 +58,4 @@ class PetugasController {
   }
 }
 
-module.exports = new PetugasController();
+module.exports = PetugasController;
