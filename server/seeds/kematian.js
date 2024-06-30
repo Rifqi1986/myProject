@@ -15,7 +15,7 @@ exports.seed = async function(knex) {
       diagnosa: 'tympani',
       note: 'lalukan nekropsi',
       foto: 'pic',
-      dataUsers_id: 1
+      dataUsers_id: 2
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ exports.seed = async function(knex) {
       diagnosa: 'bloat',
       note: 'lalukan nekropsi',
       foto: 'pic',
-      dataUsers_id: 1
+      dataUsers_id: 4
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ exports.seed = async function(knex) {
       diagnosa: 'Babesiosis',
       note: 'lalukan nekropsi',
       foto: 'pic',
-      dataUsers_id: 1
+      dataUsers_id: 5
     },
   ]);
 };

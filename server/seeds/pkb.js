@@ -15,7 +15,7 @@ exports.seed = async function(knex) {
         dataPetugas_id: 1,
         hasil: 'positif',
         foto: 'pic',
-        dataUsers_id: 1
+        dataUsers_id: 4
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ exports.seed = async function(knex) {
       dataPetugas_id: 1,
       hasil: 'negatif',
       foto: 'pic',
-      dataUsers_id: 1,
+      dataUsers_id: 5,
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ exports.seed = async function(knex) {
     dataPetugas_id: 1,
     hasil: 'positif',
     foto: 'pic',
-    dataUsers_id: 1
+    dataUsers_id: 3
 },
     
   ]);

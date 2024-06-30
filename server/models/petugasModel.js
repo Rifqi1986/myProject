@@ -1,30 +1,53 @@
 // models/petugasModel.js
 
-const knex = require('../config/database');
+const knex = require("../config/database");
 
 class PetugasModel {
-  constructor() {
-    this.mytable = 'dataPetugas';
-  }
-
   async getAllData() {
-    return knex(this.mytable).select('*');
+    try {
+      const petugas = await knex("dataPetugas").select("*");
+      return petugas;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async getDataById(id) {
-    return knex(this.mytable).where({ id }).first();
+    try {
+      const data = await knex("dataPetugas").where({ id }).first();
+      return data;
+    } catch (error) {
+      throw error;
+    }
   }
 
-  async addData(data) {
-    return knex(this.mytable).insert(data).returning('*');
+  async addData(newData) {
+    try {
+      const [dataId] = await knex("dataPetugas")
+        .insert(newData)
+        .returning("id");
+      return dataId;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async updateData(id, Data) {
-    return knex(this.mytable).where({ id }).update(Data).returning('*');
+    try {
+      await knex("dataPetugas").where({ id }).update(Data);
+      return true;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async deleteData(id) {
-    return knex(this.mytable).where({ id }).del();
+    try {
+      await knex("dataPetugas").where({ id }).del();
+      return true;
+    } catch (error) {
+      throw error;
+    }
   }
 }
 

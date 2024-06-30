@@ -1,31 +1,50 @@
-// models/dataSapiModel.js
+const db = require("../config/database");
 
-const knex = require('../config/database');
-
-class DataSapiModel {
-  constructor() {
-    this.mytable = 'dataSapi';
-  }
-
+class dataSapiModel {
   async getAllData() {
-    return knex(this.mytable).select('*');
+    try {
+      const data = await db("dataSapi").select("*");
+      return data;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async getDataById(id) {
-    return knex(this.mytable).where({ id }).first();
+    try {
+      const data = await db("dataSapi").where({ id }).first();
+      return data;
+    } catch (error) {
+      throw error;
+    }
   }
 
-  async addData(data) {
-    return knex(this.mytable).insert(data).returning('*');
+  async addData(newData) {
+    try {
+      const [dataId] = await db("dataSapi").insert(newData).returning("id");
+      return dataId;
+    } catch (error) {
+      throw error;
+    }
   }
 
-  async updateData(id, Data) {
-    return knex(this.mytable).where({ id }).update(Data).returning('*');
+  async updateData(id, newData) {
+    try {
+      await db("dataSapi").where({ id }).update(newData);
+      return true;
+    } catch (error) {
+      throw error;
+    }
   }
 
   async deleteData(id) {
-    return knex(this.mytable).where({ id }).del();
+    try {
+      await db("dataSapi").where({ id }).del();
+      return true;
+    } catch (error) {
+      throw error;
+    }
   }
 }
 
-module.exports = new DataSapiModel();
+module.exports = new dataSapiModel();

@@ -1,27 +1,13 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const AuthController = require('../controllers/authController');
+const AuthController = require("../controllers/authController");
 
-router.get('/login', (req, res) => {
-  res.render('login');
-});
+router.post("/login", AuthController.login);
 
-router.post('/login', AuthController.login);
+router.get("/login", AuthController.renderLogin);
 
-router.get('/admin', (req, res) => {
-  if (!req.session.user || req.session.user.role !== 'admin') {
-    res.status(403).send({ error: 'Access denied' });
-  } else {
-    res.render('auth/admin');
-  }
-});
+router.get("/admin-dashboard", AuthController.renderadmindash);
 
-router.get('/user', (req, res) => {
-  if (!req.session.user || req.session.user.role !== 'user') {
-    res.status(403).send({ error: 'Access denied' });
-  } else {
-    res.render('auth/user');
-  }
-});
+router.get("/home", AuthController.renderhomepage);
 
 module.exports = router;

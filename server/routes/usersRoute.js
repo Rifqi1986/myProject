@@ -1,23 +1,20 @@
-// routes/users.js
-
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const UserController = require('../controllers/userControllers');
-const db = require("../config/database")
+const userController = require("../controllers/userControllers");
 
-// Endpoint untuk mendapatkan semua user
-router.get('/', UserController.getAllUsers);
+// Endpoint untuk mendapatkan semua pengguna
+router.get("/", userController.getAllUsers);
 
-// Endpoint untuk mendapatkan user berdasarkan ID
-router.get('/:id', UserController.getUserById);
+// Endpoint untuk mendapatkan pengguna berdasarkan ID
+router.get("/:id", userController.getUserById);
 
-// Endpoint untuk membuat user baru
-router.post('/', UserController.createUser);
+// Endpoint untuk membuat pengguna baru
+router.post("/adduser", userController.createUser);
 
-// Endpoint untuk mengupdate user berdasarkan ID
-router.patch('/:id', UserController.updateUser);
+// Endpoint untuk memperbarui pengguna berdasarkan ID
+router.patch("/:id", userController.updateUser);
 
-// Endpoint untuk menghapus user berdasarkan ID
-router.delete('/:id', UserController.deleteUser);
+// Endpoint untuk menghapus pengguna berdasarkan ID
+router.delete("/:id", userController.deleteUser);
 
 module.exports = router;
