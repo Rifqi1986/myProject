@@ -2,7 +2,8 @@
 
 const express = require("express");
 const app = express();
-const session = require("express-session");
+// const session = require("express-session");
+const bodyParser = require("body-parser");
 const authRouter = require("./routes/authRoute.js");
 const userRouter = require("./routes/usersRoute.js");
 const pejantanRouter = require("./routes/pejantanRoute.js");
@@ -20,7 +21,9 @@ const port = 3000;
 // Konfigurasi middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 // set the view engine to ejs
 app.set("view engine", "ejs");
@@ -28,43 +31,19 @@ app.set("views", "./views");
 
 app.use(authRouter);
 
-app.use(
-  session({
-    secret: "823ygi4ug0354g8hv34gyt23i44hg98y6h359gh8",
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false }, // Set to true if using https
-  })
-);
-
-// Route untuk halaman login
-// app.get("/", (req, res) => {
-//   res.render("auth/loginpage", { error: null });
-// });
-
-// Route untuk halaman admin
-app.get("/admin", (req, res) => {
-  res.render("auth/admin");
-});
-
-// Route untuk halaman user
-app.get("/user", (req, res) => {
-  res.render("auth/users");
-});
-
 // Menggunakan  prefix '/api' untuk semua rute pengguna
-app.use("/api", userRouter);
+app.use("/api/users", userRouter);
 app.use("/api/pejantan", pejantanRouter);
 app.use("/api/petugas", petugasRouter);
 // app.use("/api", petugasRouter);
 app.use("/api/obat", obatRouter);
 app.use("/api/sapi", dataSapiRouter);
-app.use("/api", perkawinanRouter);
-app.use("/api", pkbRouter);
-app.use("/api", kelahiranRouter);
-app.use("/api", treatmentRouter);
-app.use("/api", kematianRouter);
-app.use("/api", distribusiRouter);
+app.use("/api/perkawinan", perkawinanRouter);
+app.use("/api/pkb", pkbRouter);
+app.use("/api/kelahiran", kelahiranRouter);
+app.use("/api/treatment", treatmentRouter);
+app.use("/api/kematian", kematianRouter);
+app.use("/api/distribusi", distribusiRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

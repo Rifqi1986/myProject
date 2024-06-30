@@ -24,7 +24,16 @@ class AuthController {
       let jabatanDb = user.jabatan;
 
       if (user.role === "admin") {
-        return res.render("auth/admin"); // Redirect ke halaman admin
+        return res.render("auth/admin", {
+          fullName: fullNameDb,
+          username: usernameDb,
+          email: emailDb,
+          password: passwordDb,
+          role: roleDb,
+          alamat: alamatDb,
+          no_tlp: no_tlpDb,
+          jabatan: jabatanDb,
+        }); // Redirect ke halaman admin
       } else if (user.role === "user") {
         return res.render("auth/users", {
           fullName: fullNameDb,
